@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.chinotan.zeus.system.mapper.SysPermissionMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, parent_id, url, code, icon, type, level, state, sort, remark, version, create_time, update_time
+    </sql>
+
+    <select id="getSysPermissionById" resultType="cn.chinotan.zeus.system.vo.SysPermissionQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_permission where id = #{id}
+    </select>
+
+    <select id="getSysPermissionPageList" resultType="cn.chinotan.zeus.system.vo.SysPermissionQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_permission
+    </select>
+
+    <select id="getPermissionCodesByUserId" resultType="java.lang.String">
+        select p.code
+        from sys_user u
+                 inner join sys_role r
+                            on u.role_id = r.id
+                 inner join sys_role_permission rp
+                            on r.id = rp.role_id
+                 inner join sys_permission p
+                            on rp.permission_id = p.id
+        where u.state = 1
+          and r.state = 1
+          and rp.state = 1
+          and p.state = 1
+          and u.deleted = 0
+          and u.id = #{userId};
+    </select>
+
+    <select id="getMenuListByUserId" resultType="cn.chinotan.zeus.system.entity.SysPermission">
+        select p.*
+        from sys_user u
+                 inner join sys_role r
+                            on u.role_id = r.id
+                 inner join sys_role_permission rp
+                            on r.id = rp.role_id
+                 inner join sys_permission p
+                            on rp.permission_id = p.id
+        where u.state = 1
+          and u.deleted = 0
+          and r.state = 1
+          and rp.state = 1
+          and p.state = 1
+          and u.id = #{userId}
+    </select>
+
+</mapper>

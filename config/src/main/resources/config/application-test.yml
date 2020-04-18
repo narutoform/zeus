@@ -1,0 +1,61 @@
+zeus:
+  # 是否启用ansi控制台输出有颜色的字体，local环境建议开启，服务器环境设置为false
+  enable-ansi: false
+  # 当前环境服务IP地址
+  server-ip: 127.0.0.1
+  # 文件上传下载配置
+  upload-path: /opt/upload/
+  # AOP配置
+  aop:
+    log:
+      enable: true
+      log-print-type: LINE
+      request-log-format: false
+      response-log-format: false
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/zeus?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+
+  # Redis配置
+  redis:
+    database: 0
+    host: localhost
+    password:
+    port: 6379
+
+# 打印SQL语句和结果集，本地开发环境可开启，线上注释掉
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    
+# 微信小程序
+wx:
+  miniapp:
+    appid:
+    secret:
+    token:
+    aesKey:
+    msgDataFormat: JSON
+  # 公众号配置(必填)
+  mp:
+    appId:
+    secret:
+    token:
+    aesKey:
+    # 存储配置redis(可选)
+    config-storage:
+      type: redis
+      redis:
+        host: 127.0.0.1
+        port: 6379
+  # 微信支付
+  pay:
+    appId:
+    mchId:
+    mchKey:
+    subAppId:
+    subMchId:
+    keyPath:

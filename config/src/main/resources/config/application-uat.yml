@@ -1,0 +1,54 @@
+zeus:
+  # 是否启用ansi控制台输出有颜色的字体，local环境建议开启，服务器环境设置为false
+  enable-ansi: false
+  # 当前环境服务IP地址
+  server-ip:
+  # AOP配置
+  aop:
+    log:
+      enable: true
+      log-print-type: LINE
+      request-log-format: false
+      response-log-format: false
+
+spring:
+  datasource:
+    url:
+    username:
+    password:
+
+  # Redis配置
+  redis:
+    database:
+    host:
+    password:
+    port:
+
+# 微信小程序
+wx:
+  miniapp:
+    appid:
+    secret:
+    token:
+    aesKey:
+    msgDataFormat: JSON
+  # 公众号配置(必填)
+  mp:
+    appId:
+    secret:
+    token:
+    aesKey:
+    # 存储配置redis(可选)
+    config-storage:
+      type: redis
+      redis:
+        host: 127.0.0.1
+        port: 6379
+  # 微信支付
+  pay:
+    appId:
+    mchId:
+    mchKey:
+    subAppId:
+    subMchId:
+    keyPath:

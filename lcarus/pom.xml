@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.chinotan.zues</groupId>
+        <artifactId>zeus</artifactId>
+        <version>2.0</version>
+    </parent>
+
+    <artifactId>lcarus</artifactId>
+    <name>lcarus</name>
+    <description>业务自定义模块，可新建N个业务模块，在bootstrap模块中引入自定义模块</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.chinotan.zues</groupId>
+            <artifactId>framework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.chinotan.zues</groupId>
+            <artifactId>redisLock</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.chinotan.zues</groupId>
+            <artifactId>wx</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
