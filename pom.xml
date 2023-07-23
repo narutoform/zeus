@@ -62,7 +62,7 @@
         <jwt.version>3.10.1</jwt.version>
         <jwt.front.version>0.9.1</jwt.front.version>
         <guava.version>28.2-jre</guava.version>
-        <snakeyaml.version>1.26</snakeyaml.version>
+        <snakeyaml.version>2.0</snakeyaml.version>
         <swagger2.version>2.9.2</swagger2.version>
         <swagger2.other.version>1.5.22</swagger2.other.version>
         <knife4j.version>2.0.2</knife4j.version>
